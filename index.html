@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Scholars | STEM Tutoring Excellence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <style>
         /* ===== RESET & GLOBAL STYLES ===== */
         * {
@@ -22,80 +22,106 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #fff;
             overflow-x: hidden;
         }
         
         h1, h2, h3, h4, h5 {
-            font-family: 'Roboto Slab', serif;
-            font-weight: 600;
-            color: #1a365d;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #0f172a;
         }
         
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         section {
-            padding: 80px 0;
+            padding: 60px 0;
+            position: relative;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
             color: white;
-            border-radius: 50px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.3);
-            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
         }
         
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #1a365d;
-            color: #1a365d;
+        .btn-secondary {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
         }
         
-        .btn-outline:hover {
-            background: #1a365d;
-            color: white;
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            position: relative;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 70px;
             height: 4px;
-            background: linear-gradient(to right, #1a365d, #4299e1);
+            background: linear-gradient(to right, #2563eb, #10b981);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Decorative floating elements */
+        .floating-element {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+        
+        .math-icon {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #2563eb;
         }
         
         /* ===== HEADER & NAVIGATION ===== */
@@ -105,8 +131,8 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
         }
         
@@ -114,13 +140,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 18px 0;
         }
         
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1a365d;
+            color: #0f172a;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -128,7 +154,12 @@
         
         .logo i {
             margin-right: 10px;
-            color: #4299e1;
+            color: #2563eb;
+            font-size: 1.9rem;
+        }
+        
+        .logo span {
+            color: #10b981;
         }
         
         .nav-links {
@@ -137,30 +168,32 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 28px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: #2d3748;
+            color: #475569;
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
+            font-size: 1rem;
         }
         
         .nav-links a:hover {
-            color: #4299e1;
+            color: #2563eb;
         }
         
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            background: #4299e1;
-            bottom: -5px;
+            height: 3px;
+            background: #2563eb;
+            bottom: -6px;
             left: 0;
             transition: width 0.3s;
+            border-radius: 2px;
         }
         
         .nav-links a:hover::after {
@@ -169,16 +202,18 @@
         
         .mobile-menu-btn {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             background: none;
             border: none;
-            color: #1a365d;
+            color: #0f172a;
             cursor: pointer;
+            padding: 5px;
         }
         
         /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
+            min-height: 700px;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -220,13 +255,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(37, 99, 235, 0.75) 100%);
             z-index: -1;
         }
         
         .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 900px;
+            padding: 0 25px;
             z-index: 2;
         }
         
@@ -234,13 +269,17 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-btns {
@@ -248,9 +287,16 @@
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
         
         /* ===== ABOUT SECTION ===== */
+        .about {
+            background-color: #f8fafc;
+            position: relative;
+            overflow: hidden;
+        }
+        
         .about-content {
             display: flex;
             align-items: center;
@@ -259,9 +305,10 @@
         
         .about-img {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 8px solid white;
         }
         
         .about-img img {
@@ -282,38 +329,61 @@
         .about-text h3 {
             font-size: 2rem;
             margin-bottom: 20px;
+            color: #0f172a;
         }
         
         .about-text p {
             margin-bottom: 20px;
-            color: #4a5568;
+            color: #475569;
+            font-size: 1.05rem;
         }
         
         .about-stats {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .stat {
             text-align: center;
+            flex: 1;
+            min-width: 120px;
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a365d;
+            color: #2563eb;
             display: block;
+            line-height: 1;
         }
         
         .stat-label {
-            color: #718096;
-            font-size: 0.9rem;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+        
+        /* Side decorative elements for about section */
+        .about .floating-element:nth-child(1) {
+            top: 15%;
+            left: 5%;
+            font-size: 2.5rem;
+        }
+        
+        .about .floating-element:nth-child(2) {
+            bottom: 20%;
+            right: 5%;
+            font-size: 2.5rem;
+            color: #10b981;
         }
         
         /* ===== ABOUT PAGES STYLES ===== */
         .about-pages {
-            background-color: #f1f5f9;
+            background-color: #ffffff;
+            position: relative;
         }
         
         .about-tabs {
@@ -322,30 +392,47 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 40px;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .tab-btn {
-            padding: 12px 25px;
+            padding: 14px 28px;
             background: white;
             border: none;
-            border-radius: 50px;
-            font-weight: 500;
+            border-radius: 8px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            color: #475569;
+            flex: 1;
+            min-width: 160px;
+        }
+        
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            color: #2563eb;
         }
         
         .tab-btn.active {
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
             color: white;
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
         }
         
         .tab-content {
             display: none;
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #2563eb;
         }
         
         .tab-content.active {
@@ -359,92 +446,148 @@
         }
         
         .tab-content h3 {
-            margin-bottom: 20px;
-            color: #1a365d;
+            margin-bottom: 25px;
+            color: #0f172a;
+            font-size: 1.8rem;
         }
         
         .life-stage {
             margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .life-stage:last-child {
+            border-bottom: none;
         }
         
         .life-stage h4 {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            color: #2c5282;
+            margin-bottom: 12px;
+            color: #2563eb;
+            font-size: 1.3rem;
         }
         
         .life-stage h4 i {
-            margin-right: 10px;
+            margin-right: 12px;
+            background: #eff6ff;
+            padding: 10px;
+            border-radius: 10px;
+            color: #2563eb;
         }
         
         .credential-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
         
         .credential-item {
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            background: white;
         }
         
         .credential-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
         .credential-item img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
             display: block;
         }
         
         .credential-caption {
-            padding: 15px;
+            padding: 18px;
             background: white;
             text-align: center;
-            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+        }
+        
+        /* Side images for about pages */
+        .about-pages .floating-element:nth-child(1) {
+            top: 15%;
+            left: 3%;
+            font-size: 2rem;
+            color: #2563eb;
+        }
+        
+        .about-pages .floating-element:nth-child(2) {
+            bottom: 20%;
+            right: 3%;
+            font-size: 2.2rem;
+            color: #10b981;
         }
         
         /* ===== SERVICES SECTION ===== */
         .services {
             background-color: #f8fafc;
+            position: relative;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         
         .service-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #4299e1;
+            border-top: 5px solid #2563eb;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #2563eb, #10b981);
+            z-index: -1;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
         
         .service-icon {
-            font-size: 3rem;
-            color: #4299e1;
-            margin-bottom: 20px;
+            font-size: 3.2rem;
+            color: #2563eb;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 15px;
         }
         
         .service-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            color: #0f172a;
+            font-size: 1.6rem;
+        }
+        
+        .service-card p {
+            color: #64748b;
+            margin-bottom: 25px;
         }
         
         .service-card ul {
@@ -454,20 +597,53 @@
         }
         
         .service-card ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-left: 30px;
             position: relative;
+            color: #475569;
         }
         
         .service-card ul li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #48bb78;
+            color: #10b981;
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .service-tag {
+            display: inline-block;
+            background: #dcfce7;
+            color: #059669;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        /* Side elements for services */
+        .services .floating-element:nth-child(1) {
+            top: 15%;
+            left: 5%;
+            font-size: 2.2rem;
+            color: #2563eb;
+        }
+        
+        .services .floating-element:nth-child(2) {
+            bottom: 15%;
+            right: 5%;
+            font-size: 2.5rem;
+            color: #f59e0b;
         }
         
         /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background-color: #ffffff;
+            position: relative;
+        }
+        
         .testimonials-slider {
             max-width: 800px;
             margin: 0 auto;
@@ -478,10 +654,11 @@
         .testimonial-slide {
             display: none;
             background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
             text-align: center;
+            border-left: 5px solid #2563eb;
         }
         
         .testimonial-slide.active {
@@ -490,24 +667,47 @@
         }
         
         .testimonial-text {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-style: italic;
-            margin-bottom: 20px;
-            color: #4a5568;
+            margin-bottom: 25px;
+            color: #475569;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .testimonial-text::before, .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: #cbd5e1;
+            position: absolute;
+            font-family: serif;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: 0;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 18px;
+            margin-top: 25px;
         }
         
         .author-img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             overflow: hidden;
+            border: 4px solid #eff6ff;
         }
         
         .author-img img {
@@ -518,135 +718,266 @@
         
         .author-info h4 {
             margin-bottom: 5px;
+            color: #0f172a;
         }
         
         .author-info p {
-            color: #718096;
-            font-size: 0.9rem;
+            color: #64748b;
+            font-size: 0.95rem;
         }
         
         .slider-dots {
             display: flex;
             justify-content: center;
             margin-top: 30px;
-            gap: 10px;
+            gap: 12px;
         }
         
         .dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: #cbd5e0;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .dot:hover {
+            transform: scale(1.2);
         }
         
         .dot.active {
-            background: #4299e1;
+            background: #2563eb;
+            transform: scale(1.2);
+        }
+        
+        /* Side elements for testimonials */
+        .testimonials .floating-element:nth-child(1) {
+            top: 20%;
+            left: 8%;
+            font-size: 2rem;
+            color: #10b981;
         }
         
         /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(37, 99, 235, 0.9) 100%), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact .section-title h2::after {
+            background: linear-gradient(to right, #34d399, #60a5fa);
+        }
+        
+        .contact .section-subtitle {
+            color: #cbd5e1;
+        }
+        
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
+            align-items: start;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
         }
         
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
         
         .contact-details h4 {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .contact-details a, .contact-details p {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
             margin-bottom: 5px;
         }
         
-        .contact-details a {
-            color: #4299e1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
         .contact-details a:hover {
-            color: #1a365d;
+            color: white;
             text-decoration: underline;
         }
         
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #e2e8f0;
-            border-radius: 50%;
-            color: #4a5568;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            color: white;
             font-size: 1.2rem;
             transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .social-links a:hover {
-            background: #4299e1;
-            color: white;
-            transform: translateY(-3px);
+            background: white;
+            color: #2563eb;
+            transform: translateY(-5px);
         }
         
-        .contact-form {
-            background: white;
+        .contact-cta {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .contact-cta h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-cta p {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+        
+        /* ===== MODAL STYLES ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .modal-header {
+            padding: 25px 30px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            color: #0f172a;
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 5px;
+        }
+        
+        .close-modal:hover {
+            color: #ef4444;
+        }
+        
+        .modal-body {
+            padding: 30px;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: #475569;
         }
         
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 18px;
             border: 1px solid #cbd5e0;
-            border-radius: 5px;
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            transition: border 0.3s;
+            transition: border 0.3s, box-shadow 0.3s;
+            font-size: 1rem;
         }
         
         .form-control:focus {
             outline: none;
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
         
         textarea.form-control {
@@ -656,9 +987,9 @@
         
         /* ===== FOOTER ===== */
         footer {
-            background: #1a365d;
-            color: white;
-            padding: 60px 0 20px;
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 50px 0 20px;
         }
         
         .footer-content {
@@ -670,13 +1001,13 @@
         
         .footer-col h3 {
             color: white;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 22px;
+            font-size: 1.4rem;
         }
         
         .footer-col p {
-            opacity: 0.8;
             margin-bottom: 20px;
+            line-height: 1.7;
         }
         
         .footer-links {
@@ -684,36 +1015,52 @@
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
-            color: #cbd5e0;
+            color: #94a3b8;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, padding-left 0.3s;
+            display: block;
         }
         
         .footer-links a:hover {
-            color: #4299e1;
-            padding-left: 5px;
+            color: #60a5fa;
+            padding-left: 8px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
+            padding-top: 25px;
+            border-top: 1px solid #334155;
+            opacity: 0.8;
             font-size: 0.9rem;
         }
         
         /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.7rem;
             }
             
             .about-content {
                 flex-direction: column;
+            }
+            
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .tab-btn {
+                min-width: 140px;
             }
         }
         
@@ -726,11 +1073,11 @@
                 background: white;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 25px 0;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
                 transform: translateY(-100%);
                 opacity: 0;
-                transition: all 0.3s;
+                transition: all 0.4s;
                 z-index: 999;
             }
             
@@ -740,7 +1087,7 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 18px 0;
             }
             
             .mobile-menu-btn {
@@ -748,11 +1095,11 @@
             }
             
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.4rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
             
             .hero-btns {
@@ -763,23 +1110,47 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .tab-content {
+                padding: 30px;
+            }
+            
+            .contact-item, .contact-cta {
+                padding: 20px;
+            }
         }
         
         @media (max-width: 576px) {
+            .hero {
+                min-height: 600px;
+            }
+            
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .section-title h2 {
                 font-size: 1.8rem;
             }
             
-            .tab-content {
-                padding: 25px;
+            .tab-btn {
+                min-width: 100%;
             }
             
-            .contact-form {
-                padding: 25px;
+            .service-card {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-slide {
+                padding: 30px 20px;
+            }
+            
+            .modal {
+                max-height: 85vh;
+            }
+            
+            .modal-body {
+                padding: 20px;
             }
         }
     </style>
@@ -790,7 +1161,7 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-graduation-cap"></i>
-                Apex Scholars
+                Apex<span>Scholars</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -799,7 +1170,7 @@
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#about-pages">My Journey</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Success Stories</a></li>
@@ -816,17 +1187,20 @@
         <div class="slide-overlay"></div>
         
         <div class="hero-content">
-            <h1>Excel in STEM with Apex Scholars</h1>
-            <p>Professional tutoring in Mathematics, Chemistry & Physics for Grade 10-12 and A-Level students. Online & in-person lessons available in Lusaka.</p>
+            <h1>Master STEM with Apex Scholars</h1>
+            <p>Expert tutoring in Mathematics, Chemistry & Physics for Grade 10-12 and A-Level students. Transform your grades with personalized online & in-person lessons in Lusaka.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn">Start Learning Today</a>
-                <a href="#services" class="btn btn-outline">View Services</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
             </div>
         </div>
     </section>
 
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about" id="about">
+        <div class="floating-element math-icon">∫</div>
+        <div class="floating-element math-icon">∑</div>
+        
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
@@ -834,24 +1208,23 @@
             
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Replace with your actual image -->
                     <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tutor at Apex Scholars">
                 </div>
                 
                 <div class="about-text">
-                    <h3>Passionate Educator & Mentor</h3>
-                    <p>Welcome to Apex Scholars! I'm a dedicated STEM tutor with over 5 years of experience helping students unlock their potential in Mathematics, Chemistry, and Physics.</p>
-                    <p>My approach combines conceptual understanding with practical application, ensuring students not only excel in exams but also develop a genuine love for science and mathematics.</p>
-                    <p>I specialize in making complex topics simple and approachable, building confidence in my students through personalized lesson plans and continuous support.</p>
+                    <h3>Dedicated STEM Educator & Mentor</h3>
+                    <p>I'm a passionate tutor with extensive experience in making Mathematics, Chemistry, and Physics accessible and exciting for students. My mission is to build confidence and mastery in STEM subjects.</p>
+                    <p>With a strong academic background and years of teaching experience, I've developed effective methods to help students not only improve their grades but also develop a genuine appreciation for scientific concepts.</p>
+                    <p>I believe every student has the potential to excel in STEM with the right guidance and support.</p>
                     
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">200+</span>
-                            <span class="stat-label">Students Tutored</span>
+                            <span class="stat-label">Students Successfully Tutored</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">98%</span>
-                            <span class="stat-label">Success Rate</span>
+                            <span class="stat-label">Improvement Rate</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">5+</span>
@@ -865,111 +1238,114 @@
 
     <!-- ===== ABOUT PAGES SECTION ===== -->
     <section class="about-pages" id="about-pages">
+        <div class="floating-element math-icon">π</div>
+        <div class="floating-element math-icon">∞</div>
+        
         <div class="container">
             <div class="section-title">
-                <h2>My Journey & Credentials</h2>
-                <p>Explore different stages of my academic and professional journey</p>
+                <h2>My Academic Journey</h2>
+                <p class="section-subtitle">Explore my path from student to educator, and the credentials that establish my expertise</p>
             </div>
             
             <div class="about-tabs">
                 <button class="tab-btn active" data-tab="early-years">Early Years</button>
-                <button class="tab-btn" data-tab="academic-achievements">Academic Achievements</button>
-                <button class="tab-btn" data-tab="teaching-philosophy">Teaching Philosophy</button>
-                <button class="tab-btn" data-tab="credentials">My Credentials</button>
+                <button class="tab-btn" data-tab="academic-achievements">Academic Excellence</button>
+                <button class="tab-btn" data-tab="teaching-philosophy">My Teaching Approach</button>
+                <button class="tab-btn" data-tab="credentials">Certifications</button>
             </div>
             
             <div class="tab-content active" id="early-years">
-                <h3>My Early Academic Journey</h3>
+                <h3>Foundation Years</h3>
                 <div class="life-stage">
-                    <h4><i class="fas fa-school"></i> Primary School Years</h4>
-                    <p>My passion for mathematics and science began in primary school where I consistently ranked top of my class. I participated in several regional math competitions and developed a problem-solving mindset from an early age.</p>
+                    <h4><i class="fas fa-school"></i> Primary School Excellence</h4>
+                    <p>My passion for problem-solving began early. I consistently ranked top in mathematics and science competitions, developing analytical thinking skills that would form the foundation of my teaching career.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-university"></i> High School Excellence</h4>
-                    <p>During my high school years at [School Name], I excelled in STEM subjects, achieving distinctions in Mathematics, Chemistry, and Physics. I served as the president of the Science Club and participated in national science fairs.</p>
+                    <h4><i class="fas fa-university"></i> High School Achievements</h4>
+                    <p>During secondary school, I achieved distinctions in Mathematics (97%), Chemistry (95%), and Physics (96%). I served as Science Club President and represented my school in national STEM competitions.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-lightbulb"></i> Discovering a Passion for Teaching</h4>
-                    <p>While still a student, I began helping classmates with challenging concepts. This experience revealed my natural aptitude for explaining complex topics in understandable ways and sparked my passion for teaching.</p>
+                    <h4><i class="fas fa-lightbulb"></i> Discovering Teaching</h4>
+                    <p>While helping classmates with challenging concepts, I discovered my natural ability to explain complex topics clearly. This experience ignited my passion for education and mentoring.</p>
                 </div>
             </div>
             
             <div class="tab-content" id="academic-achievements">
                 <h3>Academic Milestones</h3>
                 <div class="life-stage">
-                    <h4><i class="fas fa-award"></i> Grade 12 Excellence</h4>
-                    <p>Achieved outstanding results in my Grade 12 examinations with distinctions in Mathematics (97%), Chemistry (95%), and Physics (96%). This strong foundation became the bedrock of my teaching career.</p>
+                    <h4><i class="fas fa-award"></i> Grade 12 Distinctions</h4>
+                    <p>Achieved outstanding results with distinctions across all STEM subjects. This strong foundation enables me to guide students through their own academic challenges effectively.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-graduation-cap"></i> University Studies</h4>
-                    <p>Pursued a Bachelor's degree in Chemical Engineering with minors in Mathematics and Education. Graduated with honors while tutoring undergraduate students in calculus and physical chemistry.</p>
+                    <h4><i class="fas fa-graduation-cap"></i> University Success</h4>
+                    <p>Completed a Bachelor's degree with honors while tutoring undergraduate students. This dual experience as student and tutor provided unique insights into effective teaching methodologies.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-certificate"></i> Professional Development</h4>
-                    <p>Completed specialized training in modern pedagogical approaches, STEM education methodologies, and curriculum development to enhance my teaching effectiveness.</p>
+                    <h4><i class="fas fa-certificate"></i> Continuous Learning</h4>
+                    <p>Regularly participate in professional development programs focused on modern pedagogy, curriculum design, and innovative STEM teaching strategies to stay current with educational best practices.</p>
                 </div>
             </div>
             
             <div class="tab-content" id="teaching-philosophy">
-                <h3>My Approach to Teaching</h3>
+                <h3>My Teaching Methodology</h3>
                 <div class="life-stage">
-                    <h4><i class="fas fa-chalkboard-teacher"></i> Student-Centered Learning</h4>
-                    <p>I believe every student learns differently. My lessons are tailored to individual learning styles, pacing, and goals to maximize understanding and retention.</p>
+                    <h4><i class="fas fa-chalkboard-teacher"></i> Personalized Learning</h4>
+                    <p>Every student learns differently. I tailor lessons to individual learning styles, strengths, and areas needing improvement to maximize understanding and retention.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-puzzle-piece"></i> Concept Mastery Over Memorization</h4>
-                    <p>I focus on building strong conceptual foundations rather than encouraging rote memorization. Students learn to apply principles to solve novel problems confidently.</p>
+                    <h4><i class="fas fa-puzzle-piece"></i> Conceptual Mastery</h4>
+                    <p>Focus on building strong conceptual foundations rather than rote memorization. Students learn to apply principles to solve novel problems with confidence.</p>
                 </div>
                 
                 <div class="life-stage">
-                    <h4><i class="fas fa-hands-helping"></i> Building Confidence</h4>
-                    <p>Academic success stems from confidence. I create a supportive environment where students feel comfortable asking questions and making mistakes as part of the learning process.</p>
+                    <h4><i class="fas fa-hands-helping"></i> Confidence Building</h4>
+                    <p>Academic success begins with confidence. I create a supportive environment where students feel empowered to ask questions and view challenges as opportunities for growth.</p>
                 </div>
             </div>
             
             <div class="tab-content" id="credentials">
-                <h3>Academic Credentials & Certifications</h3>
-                <p>Below are some of my academic achievements and credentials that demonstrate my expertise:</p>
+                <h3>Academic Credentials</h3>
+                <p>These certifications and achievements demonstrate my expertise and commitment to excellence in STEM education:</p>
                 
                 <div class="credential-gallery">
                     <div class="credential-item">
-                        <!-- Replace with your actual certificate images -->
-                        <img src="https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Grade 12 Certificate">
+                        <img src="https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Grade 12 Certificate">
                         <div class="credential-caption">Grade 12 Certificate with Distinctions</div>
                     </div>
                     
                     <div class="credential-item">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="University Degree">
-                        <div class="credential-caption">Bachelor's Degree in Chemical Engineering</div>
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="University Degree">
+                        <div class="credential-caption">Bachelor's Degree with Honors</div>
                     </div>
                     
                     <div class="credential-item">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Teaching Certification">
-                        <div class="credential-caption">Teaching Methodology Certification</div>
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Teaching Certification">
+                        <div class="credential-caption">Advanced Teaching Certification</div>
                     </div>
                     
                     <div class="credential-item">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Award Certificate">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Award Certificate">
                         <div class="credential-caption">Excellence in STEM Education Award</div>
                     </div>
                 </div>
-                
-                <p style="margin-top: 30px;">I'm committed to continuous learning and regularly update my skills to provide the highest quality education to my students.</p>
             </div>
         </div>
     </section>
 
     <!-- ===== SERVICES SECTION ===== -->
     <section class="services" id="services">
+        <div class="floating-element math-icon">Δ</div>
+        <div class="floating-element math-icon">θ</div>
+        
         <div class="container">
             <div class="section-title">
-                <h2>My Tutoring Services</h2>
-                <p>Personalized lessons designed for academic excellence</p>
+                <h2>Tutoring Services</h2>
+                <p class="section-subtitle">Comprehensive STEM tutoring designed for academic success at every level</p>
             </div>
             
             <div class="services-grid">
@@ -978,15 +1354,16 @@
                         <i class="fas fa-calculator"></i>
                     </div>
                     <h3>Grade 10-12 Tutoring</h3>
-                    <p>Comprehensive support for high school students in Mathematics, Chemistry, Physics, and General Science.</p>
+                    <p>Complete support for high school students in core STEM subjects with focus on exam preparation and conceptual understanding.</p>
                     <ul>
-                        <li>Exam preparation & past papers</li>
-                        <li>Conceptual understanding focus</li>
+                        <li>Mathematics (All levels)</li>
+                        <li>Chemistry & Physics</li>
+                        <li>Exam preparation strategies</li>
                         <li>Practical lab support</li>
-                        <li>Regular progress assessments</li>
-                        <li>Homework help & assignment support</li>
+                        <li>Homework & assignment help</li>
+                        <li>Regular progress tracking</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 500; color: #1a365d;">Available: Online & In-person (Lusaka)</p>
+                    <div class="service-tag">Online & In-person (Lusaka)</div>
                 </div>
                 
                 <div class="service-card">
@@ -994,15 +1371,16 @@
                         <i class="fas fa-atom"></i>
                     </div>
                     <h3>A-Level Mathematics & Chemistry</h3>
-                    <p>Specialized tutoring for A-Level students to master advanced concepts and excel in examinations.</p>
+                    <p>Advanced tutoring for A-Level students to master complex concepts and excel in examinations.</p>
                     <ul>
-                        <li>Syllabus coverage & extension</li>
-                        <li>Problem-solving strategies</li>
+                        <li>Complete syllabus coverage</li>
+                        <li>Advanced problem-solving</li>
                         <li>Past paper practice</li>
                         <li>University preparation</li>
+                        <li>Practical application focus</li>
                         <li>Theory & practical integration</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 500; color: #1a365d;">Available: Online & In-person (Lusaka)</p>
+                    <div class="service-tag">Online & In-person (Lusaka)</div>
                 </div>
                 
                 <div class="service-card">
@@ -1010,44 +1388,46 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Group Sessions & Workshops</h3>
-                    <p>Cost-effective group learning for students who thrive in collaborative environments.</p>
+                    <p>Collaborative learning environments for students who benefit from peer interaction and group problem-solving.</p>
                     <ul>
                         <li>Small group sessions (3-5 students)</li>
                         <li>Exam preparation workshops</li>
                         <li>Holiday revision programs</li>
-                        <li>Interactive problem-solving sessions</li>
-                        <li>Peer learning facilitation</li>
+                        <li>Interactive learning activities</li>
+                        <li>Cost-effective option</li>
+                        <li>Peer learning opportunities</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 500; color: #1a365d;">Flexible scheduling available</p>
+                    <div class="service-tag">Flexible scheduling available</div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px;">
-                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px; color: #4a5568;">
-                    <strong>Fees are negotiable</strong> based on subject level, frequency, and group size. Contact me to discuss a personalized plan that fits your needs and budget.
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px; color: #475569; font-weight: 500;">
+                    <i class="fas fa-comments" style="color: #2563eb; margin-right: 8px;"></i>
+                    <strong>Fees are negotiable</strong> based on subject level, frequency, and format. Contact me to discuss a personalized learning plan that fits your needs and budget.
                 </p>
-                <a href="#contact" class="btn">Discuss Your Learning Plan</a>
             </div>
         </div>
     </section>
 
     <!-- ===== TESTIMONIALS SECTION ===== -->
     <section class="testimonials" id="testimonials">
+        <div class="floating-element math-icon">α</div>
+        
         <div class="container">
             <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>What students and parents say about Apex Scholars</p>
+                <h2>Student Success Stories</h2>
+                <p class="section-subtitle">Hear from students and parents who have experienced transformation through Apex Scholars</p>
             </div>
             
             <div class="testimonials-slider">
                 <div class="testimonial-slide active">
                     <div class="testimonial-text">
-                        "I was struggling with Chemistry in Grade 11, barely passing with a D. After 3 months of tutoring with Apex Scholars, I achieved a B+ in my finals! The conceptual approach made all the difference."
+                        I was struggling with Chemistry in Grade 11, barely passing with a D. After 3 months of tutoring with Apex Scholars, I achieved a B+ in my finals! The conceptual approach made complex topics understandable and the regular practice built my confidence.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <!-- Replace with actual testimonial photos -->
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Student">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Student">
                         </div>
                         <div class="author-info">
                             <h4>James Mwewa</h4>
@@ -1058,11 +1438,11 @@
                 
                 <div class="testimonial-slide">
                     <div class="testimonial-text">
-                        "My daughter's confidence in Mathematics has skyrocketed since starting lessons. She went from fearing math exams to actually looking forward to them. The personalized attention made all the difference."
+                        My daughter's confidence in Mathematics has transformed completely since starting lessons. She went from fearing math exams to actually enjoying problem-solving. The personalized attention and patience made all the difference in her academic journey.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Parent">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Parent">
                         </div>
                         <div class="author-info">
                             <h4>Mrs. Banda</h4>
@@ -1073,11 +1453,11 @@
                 
                 <div class="testimonial-slide">
                     <div class="testimonial-text">
-                        "A-Level Chemistry was overwhelming until I started these lessons. The tutor breaks down complex topics into understandable parts. I've improved from a C to an A in just one term!"
+                        A-Level Chemistry felt overwhelming until I started these lessons. My tutor breaks down complex organic chemistry concepts into manageable parts. I've improved from a C to a solid A in just one term and now feel prepared for university science programs.
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Student">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" alt="Student">
                         </div>
                         <div class="author-info">
                             <h4>Chanda Mulenga</h4>
@@ -1099,8 +1479,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Me</h2>
-                <p>Get in touch to discuss your learning goals</p>
+                <h2>Get In Touch</h2>
+                <p class="section-subtitle">Contact me to discuss your learning goals and schedule your first session</p>
             </div>
             
             <div class="contact-container">
@@ -1112,18 +1492,19 @@
                         <div class="contact-details">
                             <h4>Email Address</h4>
                             <a href="mailto:siabanamilimo003@gmail.com">siabanamilimo003@gmail.com</a>
-                            <p>I typically respond within 24 hours</p>
+                            <p>I respond within 24 hours</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Phone & WhatsApp</h4>
-                            <a href="tel:+260976452281">+260 976 452 281</a>
-                            <p>Call or WhatsApp for quick responses</p>
+                            <h4>WhatsApp & Phone</h4>
+                            <a href="https://wa.me/260976452281" target="_blank">+260 976 452 281</a>
+                            <p>Click to message directly on WhatsApp</p>
+                            <p>Call or message for quick responses</p>
                         </div>
                     </div>
                     
@@ -1132,8 +1513,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Location & Service Area</h4>
-                            <p>Based in Lusaka, Zambia</p>
+                            <h4>Service Area</h4>
+                            <p><strong>Based in Lusaka, Zambia</strong></p>
                             <p>Online lessons available worldwide</p>
                             <p>In-person lessons within Lusaka</p>
                         </div>
@@ -1145,90 +1526,106 @@
                         </div>
                         <div class="contact-details">
                             <h4>Availability</h4>
-                            <p>Weekdays: 2:00 PM - 8:00 PM</p>
-                            <p>Weekends: 9:00 AM - 5:00 PM</p>
-                            <p>Flexible scheduling available</p>
+                            <p><strong>Weekdays:</strong> 2:00 PM - 8:00 PM</p>
+                            <p><strong>Weekends:</strong> 9:00 AM - 5:00 PM</p>
+                            <p>Flexible scheduling available upon request</p>
                         </div>
                     </div>
                     
                     <div class="social-links">
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <p>Fill out the form below and I'll get back to you to discuss lesson arrangements.</p>
-                    
-                    <form id="contactForm" action="https://formsubmit.co/siabanamilimo003@gmail.com" method="POST">
-                        <!-- FormSubmit.co will send to your email -->
-                        <input type="hidden" name="_subject" value="New Tutoring Inquiry - Apex Scholars">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="#contact">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="studentLevel">Student Level *</label>
-                            <select id="studentLevel" name="studentLevel" class="form-control" required>
-                                <option value="">Select Level</option>
-                                <option value="grade-10">Grade 10</option>
-                                <option value="grade-11">Grade 11</option>
-                                <option value="grade-12">Grade 12</option>
-                                <option value="a-level">A-Level</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subjects">Subjects of Interest *</label>
-                            <select id="subjects" name="subjects" class="form-control" required>
-                                <option value="">Select Subjects</option>
-                                <option value="mathematics">Mathematics</option>
-                                <option value="chemistry">Chemistry</option>
-                                <option value="physics">Physics</option>
-                                <option value="science">General Science</option>
-                                <option value="multiple">Multiple Subjects</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="lessonType">Preferred Lesson Type</label>
-                            <select id="lessonType" name="lessonType" class="form-control">
-                                <option value="">Select Type</option>
-                                <option value="online">Online Lessons</option>
-                                <option value="in-person">In-Person (Lusaka)</option>
-                                <option value="both">Both Options</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Please include any specific learning goals, preferred schedule, or questions you have..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                    </form>
+                <div class="contact-cta">
+                    <h3>Ready to Excel in STEM?</h3>
+                    <p>Send me a message to discuss lesson arrangements, schedules, and how we can work together to achieve your academic goals.</p>
+                    <button class="btn" id="openContactForm">Send a Message</button>
+                    <p style="margin-top: 20px; font-size: 0.95rem; color: #94a3b8;">
+                        <i class="fas fa-info-circle"></i> I'll respond promptly to discuss personalized learning plans.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== MODAL CONTACT FORM ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Contact Apex Scholars</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 25px; color: #475569;">Fill out the form below and I'll get back to you within 24 hours to discuss lesson arrangements.</p>
+                
+                <form id="contactForm" action="https://formsubmit.co/siabanamilimo003@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Tutoring Inquiry - Apex Scholars">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="#contact">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentLevel">Student Level *</label>
+                        <select id="studentLevel" name="studentLevel" class="form-control" required>
+                            <option value="">Select Level</option>
+                            <option value="grade-10">Grade 10</option>
+                            <option value="grade-11">Grade 11</option>
+                            <option value="grade-12">Grade 12</option>
+                            <option value="a-level">A-Level</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subjects">Subjects of Interest *</label>
+                        <select id="subjects" name="subjects" class="form-control" required>
+                            <option value="">Select Subjects</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="physics">Physics</option>
+                            <option value="science">General Science</option>
+                            <option value="multiple">Multiple Subjects</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lessonType">Preferred Lesson Type</label>
+                        <select id="lessonType" name="lessonType" class="form-control">
+                            <option value="">Select Type</option>
+                            <option value="online">Online Lessons</option>
+                            <option value="in-person">In-Person (Lusaka)</option>
+                            <option value="both">Both Options</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Please include any specific learning goals, preferred schedule, or questions you have..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; padding: 16px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer>
@@ -1236,7 +1633,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>Apex Scholars</h3>
-                    <p>Excellence in STEM education for Grade 10-12 and A-Level students. Building confident, capable learners through personalized tutoring.</p>
+                    <p>Transforming STEM education through personalized tutoring. Building confident, capable learners ready to excel academically and beyond.</p>
                     <div class="social-links">
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1272,16 +1669,16 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> siabanamilimo003@gmail.com</p>
-                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +260 976 452 281</p>
+                    <p><i class="fab fa-whatsapp" style="margin-right: 10px;"></i> +260 976 452 281</p>
                     <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Lusaka, Zambia</p>
-                    <p style="margin-top: 15px;"><strong>Lessons Available:</strong></p>
-                    <p>Online & In-person (Lusaka)</p>
-                    <p>Fees are negotiable</p>
+                    <p style="margin-top: 15px; color: #e2e8f0;"><strong>Lessons Available:</strong></p>
+                    <p>Online Worldwide & In-person (Lusaka)</p>
+                    <p style="color: #60a5fa;">Fees are negotiable based on your needs</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Apex Scholars. All rights reserved. | Designed with passion for education</p>
+                <p>&copy; 2023 Apex Scholars. All rights reserved. | Excellence in STEM Education</p>
             </div>
         </div>
     </footer>
@@ -1290,11 +1687,11 @@
         // ===== SLIDESHOW FUNCTIONALITY =====
         const heroImages = [
             "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1122&q=80",
             "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-            "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-            "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         ];
         
         const heroSlideshow = document.getElementById('heroSlideshow');
@@ -1381,6 +1778,37 @@
         
         setInterval(rotateTestimonials, 8000);
         
+        // ===== MODAL FUNCTIONALITY =====
+        const modalOverlay = document.getElementById('modalOverlay');
+        const openContactForm = document.getElementById('openContactForm');
+        const closeModal = document.getElementById('closeModal');
+        
+        openContactForm.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
         // ===== FORM SUBMISSION =====
         const contactForm = document.getElementById('contactForm');
         
@@ -1396,37 +1824,58 @@
                 return;
             }
             
-            // If using FormSubmit.co, the form will submit to your email
-            // You can add additional form validation here if needed
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you! Your message has been sent. I will respond within 24 hours.');
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, 500);
         });
         
         // ===== SCROLL EFFECTS =====
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.padding = '10px 0';
+                header.style.padding = '12px 0';
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.padding = '20px 0';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '18px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
             }
         });
         
-        // ===== EMAIL & PHONE CLICK HANDLERS =====
-        // These make email and phone links clickable on mobile
-        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth > 768) return; // Only on mobile
-                const email = link.getAttribute('href').replace('mailto:', '');
-                navigator.clipboard.writeText(email).then(() => {
-                    alert(`Email address ${email} copied to clipboard!`);
-                });
-            });
+        // ===== WHATSAPP LINK =====
+        // Make WhatsApp link open in new tab
+        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+            link.setAttribute('target', '_blank');
         });
         
         // ===== INITIALIZE ON LOAD =====
         window.addEventListener('DOMContentLoaded', () => {
-            // Show first slide and testimonial already set by HTML
+            // Create floating math/science elements
+            const mathSymbols = ['∫', '∑', 'π', '∞', 'Δ', 'θ', 'α', 'β', 'γ', '√', '≠', '≈', '≤', '≥', '∂', '∇'];
+            const sections = document.querySelectorAll('section:not(.hero):not(.contact)');
+            
+            sections.forEach(section => {
+                // Add 2-3 floating elements per section
+                for (let i = 0; i < 3; i++) {
+                    const element = document.createElement('div');
+                    element.className = 'floating-element math-icon';
+                    element.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+                    
+                    // Random position
+                    const top = Math.random() * 80 + 10;
+                    const left = Math.random() * 90 + 5;
+                    
+                    element.style.top = `${top}%`;
+                    element.style.left = `${left}%`;
+                    element.style.fontSize = `${Math.random() * 1.5 + 1.5}rem`;
+                    element.style.opacity = `${Math.random() * 0.08 + 0.04}`;
+                    
+                    section.appendChild(element);
+                }
+            });
+            
             console.log('Apex Scholars website loaded successfully!');
         });
     </script>
