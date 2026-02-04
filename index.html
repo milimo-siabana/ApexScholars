@@ -1038,6 +1038,28 @@
             font-size: 0.9rem;
         }
         
+        /* Form Alert Styles */
+        .form-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 10000;
+            max-width: 400px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
         /* ===== RESPONSIVE STYLES ===== */
         @media (max-width: 1100px) {
             .hero h1 {
@@ -1118,6 +1140,10 @@
             .contact-item, .contact-cta {
                 padding: 20px;
             }
+            
+            .modal-body {
+                padding: 20px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1149,8 +1175,10 @@
                 max-height: 85vh;
             }
             
-            .modal-body {
-                padding: 20px;
+            .form-alert {
+                left: 20px;
+                right: 20px;
+                max-width: none;
             }
         }
     </style>
@@ -1163,8 +1191,7 @@
                 <img src="profile-img.jpg" 
                      alt="Apex Scholars" 
                      style="height: 45px; width: auto; vertical-align: middle; margin-right: 12px;">
-                <span style="vertical-align: middle; font-size: 1.8rem; font-weight: 800; color: var(--primary-blue);">Apex  Scholars</span>
-                
+                <span style="vertical-align: middle; font-size: 1.8rem; font-weight: 800; color: #2563eb;">Apex Scholars</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1565,10 +1592,23 @@
                 <p style="margin-bottom: 25px; color: #475569;">Fill out the form below and I'll get back to you within 24 hours to discuss lesson arrangements.</p>
                 
                 <form id="contactForm" action="https://formsubmit.co/siabanamilimo003@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Tutoring Inquiry - Apex Scholars">
-                    <input type="hidden" name="_captcha" value="false">
+                    <!-- ===== FORMSUBMIT ADVANCED FEATURES ===== -->
+                    <input type="hidden" name="_subject" value="📚 New Tutoring Inquiry - Apex Scholars">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting Apex Scholars!
+
+This confirms that I've received your tutoring inquiry. I'll review your details carefully and respond within 24 hours (except Saturdays) to discuss personalized lesson arrangements.
+
+Best regards,
+Milimo Siabana
+Apex Scholars | STEM Tutoring Excellence">
+                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="#contact">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_confirmation" value="true">
+                    <input type="hidden" name="_blacklist" value="viagra,cialis,porn,xxx,casino,gambling,lottery">
                     
+                    <!-- ===== YOUR EXISTING FORM FIELDS ===== -->
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -1576,12 +1616,12 @@
                     
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="student@example.com">
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                        <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+260 XXX XXX XXX">
                     </div>
                     <div class="form-group">
                         <label for="studentLevel">Student Level *</label>
@@ -1622,7 +1662,31 @@
                         <textarea id="message" name="message" class="form-control" placeholder="Please include any specific learning goals, preferred schedule, or questions you have..." required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn" style="width: 100%; padding: 16px;">Send Message</button>
+                    <!-- Consent checkbox -->
+                    <div class="form-group" style="background: #f8fafc; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <div style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="consent" name="consent" required style="margin-top: 3px;">
+                            <label for="consent" style="margin-bottom: 0; font-size: 0.95rem;">
+                                I understand that my information will be used solely to respond to my inquiry and arrange tutoring services.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- CAPTCHA Note -->
+                    <div style="background: #e0f2fe; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #0ea5e9;">
+                        <p style="margin: 0; color: #0369a1; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-shield-alt"></i>
+                            <strong>Security:</strong> After clicking "Send Message", you'll complete a quick security check.
+                        </p>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; padding: 16px;">
+                        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message
+                    </button>
+                    
+                    <p style="text-align: center; margin-top: 15px; color: #64748b; font-size: 0.9rem;">
+                        <i class="fas fa-lock" style="margin-right: 5px;"></i> Your information is secure and encrypted
+                    </p>
                 </form>
             </div>
         </div>
@@ -1786,7 +1850,7 @@
         
         openContactForm.addEventListener('click', () => {
             modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         });
         
         closeModal.addEventListener('click', () => {
@@ -1810,28 +1874,104 @@
             }
         });
         
-        // ===== FORM SUBMISSION =====
+        // ===== ENHANCED FORM SUBMISSION =====
         const contactForm = document.getElementById('contactForm');
         
         contactForm.addEventListener('submit', function(e) {
-            // Simple validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            // Validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const consent = document.getElementById('consent');
             
-            if (!name || !email || !message) {
+            // Validate required fields
+            if (!name || !email || !phone || !message) {
                 e.preventDefault();
-                alert('Please fill in all required fields.');
+                showFormAlert('Please fill in all required fields.', 'error');
                 return;
             }
             
+            // Check consent
+            if (!consent || !consent.checked) {
+                e.preventDefault();
+                showFormAlert('Please agree to the consent statement.', 'error');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                showFormAlert('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show sending state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            // Add visual feedback
+            this.style.opacity = '0.8';
+            
             // Show success message
             setTimeout(() => {
-                alert('Thank you! Your message has been sent. I will respond within 24 hours.');
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }, 500);
+                showFormAlert('✓ Message sent! Check your email for confirmation.', 'success');
+            }, 100);
+            
+            // Auto-reset after 10 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                this.style.opacity = '1';
+            }, 10000);
         });
+        
+        // Helper function to show form alerts
+        function showFormAlert(message, type) {
+            // Remove any existing alerts
+            const existingAlert = document.querySelector('.form-alert');
+            if (existingAlert) existingAlert.remove();
+            
+            // Create alert element
+            const alert = document.createElement('div');
+            alert.className = `form-alert ${type}`;
+            alert.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                background: ${type === 'error' ? '#fef2f2' : '#f0fdf4'};
+                color: ${type === 'error' ? '#991b1b' : '#166534'};
+                border: 1px solid ${type === 'error' ? '#fecaca' : '#bbf7d0'};
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 10000;
+                max-width: 400px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            `;
+            
+            alert.innerHTML = `
+                <i class="fas ${type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(alert);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.style.opacity = '0';
+                    alert.style.transition = 'opacity 0.5s';
+                    setTimeout(() => alert.remove(), 500);
+                }
+            }, 5000);
+        }
         
         // ===== SCROLL EFFECTS =====
         window.addEventListener('scroll', () => {
@@ -1877,13 +2017,8 @@
                 }
             });
             
-            console.log('Apex Scholars website loaded successfully!');
+            console.log('Apex Scholars website loaded with FormSubmit features!');
         });
     </script>
 </body>
 </html>
-
-
-
-
-
